@@ -30,6 +30,7 @@ class LazyLoadImage extends React.Component {
 		const {
 			afterLoad,
 			beforeLoad,
+			onError,
 			delayMethod,
 			delayTime,
 			effect,
@@ -146,6 +147,7 @@ class LazyLoadImage extends React.Component {
 LazyLoadImage.propTypes = {
 	afterLoad: PropTypes.func,
 	beforeLoad: PropTypes.func,
+	onError: PropTypes.func,
 	delayMethod: PropTypes.string,
 	delayTime: PropTypes.number,
 	effect: PropTypes.string,
@@ -160,6 +162,7 @@ LazyLoadImage.propTypes = {
 LazyLoadImage.defaultProps = {
 	afterLoad: () => ({}),
 	beforeLoad: () => ({}),
+	onError: () => ({}),
 	delayMethod: 'throttle',
 	delayTime: 300,
 	effect: '',
