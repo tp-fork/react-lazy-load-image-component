@@ -26,11 +26,14 @@ class LazyLoadImage extends React.Component {
 		};
 	}
 
+	onError(event) {
+		console.log(event);
+	}
+
 	getImg() {
 		const {
 			afterLoad,
 			beforeLoad,
-			onError,
 			delayMethod,
 			delayTime,
 			effect,
@@ -45,7 +48,7 @@ class LazyLoadImage extends React.Component {
 			...imgProps
 		} = this.props;
 
-		return <img onLoad={this.onImageLoad()} {...imgProps} />;
+		return <img onLoad={this.onImageLoad()} onError={this.onError} {...imgProps} />;
 	}
 
 	getLazyLoadImage() {
